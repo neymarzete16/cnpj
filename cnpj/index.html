@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta CNPJ Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔍 Consultar CNPJ</h1>
+        <p>Insira o número do CNPJ para obter os dados oficiais.</p>
+
+        <div class="search-group">
+            <input type="text" id="cnpjInput" placeholder="00.000.000/0001-00" maxlength="18">
+            <button onclick="buscarCNPJ()">Pesquisar</button>
+        </div>
+
+        <div id="loader" class="hidden">Carregando...</div>
+
+        <div id="resultCard" class="card hidden">
+            <div id="conteudoParaPDF">
+                <h2 id="res_razao"></h2>
+                <hr>
+                <div class="grid">
+                    <div><strong>Nome Fantasia:</strong> <span id="res_fantasia"></span></div>
+                    <div><strong>CNPJ:</strong> <span id="res_cnpj"></span></div>
+                    <div><strong>Situação:</strong> <span id="res_situacao"></span></div>
+                    <div><strong>Atividade:</strong> <span id="res_atividade"></span></div>
+                    <div><strong>Capital Social:</strong> <span id="res_capital"></span></div>
+                    <div><strong>Telefone:</strong> <span id="res_tel"></span></div>
+                    <div><strong>Endereço:</strong> <span id="res_end"></span></div>
+                </div>
+            </div>
+            <button class="btn-pdf" onclick="gerarPDF()">📄 Gerar PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
